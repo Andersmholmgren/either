@@ -1,7 +1,5 @@
 part of option;
 
-import 'package:option/option.dart';
-
 abstract class Either<L, R> {
 
   /**

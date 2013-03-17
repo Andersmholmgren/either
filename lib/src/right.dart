@@ -1,7 +1,5 @@
 part of option;
 
-import 'package:option/option.dart';
-
 class Right<L, R> extends Either<L, R> {
 
   final R _inner;
