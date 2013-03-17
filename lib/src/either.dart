@@ -2,6 +2,8 @@ part of option;
 
 abstract class Either<L, R> {
 
+  const Either();
+
   /**
    * Returns true if this `Either` type is `Left`, fasle otherwise
    *

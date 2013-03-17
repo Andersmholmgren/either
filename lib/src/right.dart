@@ -26,7 +26,7 @@ class Right<L, R> extends Either<L, R> {
    * @return {Boolean} - True
    */
   bool isRight() {
-    return false;
+    return true;
   }
 
   /**
