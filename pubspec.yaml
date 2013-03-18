@@ -1,5 +1,5 @@
 name: either
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/JosephMoniz/dart-either
 description: >
   A more expressive way to return error or success values via the type system

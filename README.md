@@ -35,12 +35,12 @@ main() {
     (v) => "never executed"
   );
 
-  var rightIsLeft = right.isLeft();
-  var rightIsRight = right.isRight();
-  var rightLeftProjection = right.left();
+  var rightIsLeft          = right.isLeft();
+  var rightIsRight         = right.isRight();
+  var rightLeftProjection  = right.left();
   var rightRightProjection = right.right();
-  var rightSwapped = right.swap();
-  var rightFold = right.fold(
+  var rightSwapped         = right.swap();
+  var rightFold            = right.fold(
     (v) => "never executed",
     (v) => "folded ${v}"
   );
