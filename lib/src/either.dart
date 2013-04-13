@@ -7,14 +7,14 @@ abstract class Either<L, R> {
   /**
    * Returns true if this `Either` type is `Left`, fasle otherwise
    *
-   * @return {Boolean}
+   * @return Boolean
    */
   bool isLeft();
 
   /**
    * Returns true if this `Either` type is `Right`, false otherwise
    *
-   * @return {Boolean}
+   * @return Boolean
    */
   bool isRight();
 
@@ -24,9 +24,9 @@ abstract class Either<L, R> {
    * same applies for `rightCase` in the event that this `Either` type
    * is `Right`
    *
-   * @param {dynamic(L)} leftCase  - The computation to run on `Left` type
-   * @param {dynamic(R)} rightCase - The computation to run on `Right` type
-   * @return {dynamic}             - The result of the computation that was ran
+   * @param dynamic(L) leftCase  - The computation to run on `Left` type
+   * @param dynamic(R) rightCase - The computation to run on `Right` type
+   * @return dynamic             - The result of the computation that was ran
    */
   dynamic fold(dynamic leftCase(L left), dynamic rightCase(R right));
 
@@ -35,7 +35,7 @@ abstract class Either<L, R> {
    * So if this is type `Left` it returns an instance of `Some` but if this is
    * a `Right` type this returns an instance of `None`
    *
-   * @return {Option<L>} - The optional left projection
+   * @return Option<L> - The optional left projection
    */
   Option<L> left();
 
@@ -44,7 +44,7 @@ abstract class Either<L, R> {
    * So fi this is type `Right` it returns an instance of `Some` but if this is
    * a `Left` type thin this returns an instance of `None`
    *
-   * @return {Option<R>} - The optional right projection
+   * @return Option<R> - The optional right projection
    */
   Option<R> right();
 
@@ -52,7 +52,7 @@ abstract class Either<L, R> {
    * When ran on a `Left` type this returns a `Right` with the same inner value.
    * When ran on a `Right` type this returns a `Left` with the same inner value.
    *
-   * @return {Either<R, L>} - The swapped `Either` type
+   * @return Either<R, L> - The swapped `Either` type
    */
   Either<R, L> swap();
 

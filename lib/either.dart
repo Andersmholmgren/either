@@ -1,4 +1,4 @@
-library option;
+library either;
 
 import 'package:option/option.dart';
 

@@ -7,23 +7,23 @@ class Right<L, R> extends Either<L, R> {
   /**
    * Constant constructor because we like immutability
    *
-   * @param {R} _inner - The inner value to wrap
+   * @param R _inner - The inner value to wrap
    */
   const Right(this._inner);
 
   /**
    * Returns false
    *
-   * @return {Boolean} - False
+   * @return Boolean - False
    */
   bool isLeft() {
     return false;
   }
 
   /**
-   * Retruns true
+   * Returns true
    *
-   * @return {Boolean} - True
+   * @return Boolean - True
    */
   bool isRight() {
     return true;
@@ -32,18 +32,18 @@ class Right<L, R> extends Either<L, R> {
   /**
    * Calls `rightCase` with the inner value and returns the result
    *
-   * @param {dynamic(L)} leftCase  - The left case to ignore
-   * @param {dynamic(R)} rightCase - The right case to run
-   * @return {dynamic}             - The result of the `rightCase`
+   * @param dynamic(L) leftCase  - The left case to ignore
+   * @param dynamic(R) rightCase - The right case to run
+   * @return dynamic             - The result of the `rightCase`
    */
   dynamic fold(dynamic leftCase(L left), dynamic rightCase(R right)) {
     return rightCase(this._inner);
   }
 
   /**
-   * Retruns a `None` projection
+   * Returns a `None` projection
    *
-   * @return {Option<L>} - The `None` projection
+   * @return Option<L> - The `None` projection
    */
   Option<L> left() {
     return new None<L>();
@@ -52,7 +52,7 @@ class Right<L, R> extends Either<L, R> {
   /**
    * Returns a `Some` projection
    *
-   * @return {Option<R>} - The `Some` projection
+   * @return Option<R> - The `Some` projection
    */
   Option<R> right() {
     return new Some(this._inner);
@@ -61,7 +61,7 @@ class Right<L, R> extends Either<L, R> {
   /**
    * Returns the inner value wrapped in a `Left
    *
-   * @return {Either<R, L>} - The swapped `Either` type
+   * @return Either<R, L> - The swapped `Either` type
    */
   Either<R, L> swap() {
     return new Left(this._inner);
