@@ -41,6 +41,28 @@ class Left<L, R> extends Either<L, R> {
   }
 
   /**
+   * This function returns `this` immediately because you can't
+   * map over a `Left`, only a `Right`.
+   *
+   * @param dynamic(R) mapper  - The mapper to ignore
+   * return Either<L, dynamic> - This `Left` isntance
+   */
+  Either<L, dynamic> map(dynamic mapper(R n)) {
+    return this;
+  }
+
+  /**
+   * This function returns `this` immediately because you can't
+   * flatMap over a `Left`, only a `Right`.
+   *
+   * @param Either<dynamic, dynamic>(R) flatMapper - The flatMapper to ignore
+   * @return Either<dynamic, dynamic>              - This `Left` instance
+   */
+  Either<dynamic, dynamic> flatMap(Either<dynamic, dynamic> flatMapper(R n)) {
+    return this;
+  }
+
+  /**
    * Returns a `Some` projection
    *
    * @return Option<L> - The `Some` projection

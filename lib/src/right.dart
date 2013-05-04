@@ -41,6 +41,27 @@ class Right<L, R> extends Either<L, R> {
   }
 
   /**
+   * Given a `mapper` this function applies the mapper to the inner value.
+   *
+   * @param dynamic(R) mapper   - The mapper to apply to the inner value
+   * @return Either<L, dynamic> - The result of applying the mapper
+   */
+  Either<L, dynamic> map(dynamic mapper(R n)) {
+    return new Right(mapper(this._inner));
+  }
+
+  /**
+   * Given a `flatMapper` this function applies the flatMapper to the inner
+   * value.
+   *
+   * @param Either<dynamic, dynamic>(R) flatMapper - The flatMapper to apply
+   * @return Either<dynamic, dynamic> - The result of applying the flatMapper
+   */
+  Either<dynamic, dynamic> flatMap(Either<dynamic, dynamic> flatMapper(R n)) {
+    return flatMapper(this._inner);
+  }
+
+  /**
    * Returns a `None` projection
    *
    * @return Option<L> - The `None` projection

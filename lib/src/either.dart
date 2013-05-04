@@ -31,6 +31,28 @@ abstract class Either<L, R> {
   dynamic fold(dynamic leftCase(L left), dynamic rightCase(R right));
 
   /**
+   * Given a `mapper` this function applies the mapper to the inner value of
+   * this `Either` if and only if this `Either` type is `Right`. If this
+   * `Either` type is `Left`, then this function returns `this` immediately
+   *
+   * @param dynamic(R) mapper - The mapper to apply to the inner right value
+   * @return Either<dynamic, dynamic> - The result of the map opperation
+   */
+  Either<L, dynamic> map(dynamic mapper(R n));
+
+
+  /**
+   * Given a `flatMapper` this function applies the flatMapper to the inner
+   * value of this `Either` if and only if this `Either` type is `Right`.
+   * If this `Either` type is `Left`, then this function returns `this`
+   * immediately
+   *
+   * @param Either<dynamic, dynamic>(R n) flatMapper - The flatMapper to apply
+   * @return Either<dynamic, dynamic> - The result of the flatMap
+   */
+  Either<dynamic, dynamic> flatMap(Either<dynamic, dynamic> flatMapper(R n));
+
+  /**
    * Returns an `Option` projection of the `Left` value of this `Either` type.
    * So if this is type `Left` it returns an instance of `Some` but if this is
    * a `Right` type this returns an instance of `None`
