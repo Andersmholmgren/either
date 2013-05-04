@@ -1,6 +1,8 @@
 Either
 ======
 
+[![Build Status](https://drone.io/github.com/JosephMoniz/dart-either/status.png)](https://drone.io/github.com/JosephMoniz/dart-either/latest)
+
 A more expressive way to return error or success values via the type system.
 Instead of throwing exeptions return an error state of any type, even if it
 conflicts with the type of the success return value. The higher kinded type
