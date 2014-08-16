@@ -14,12 +14,12 @@ leftTests() {
       expect(instance.isRight(), isFalse);
     });
 
-    test("fold() should run the left case", () {
-      var result = instance.fold(
+    test("cata() should run the left case", () {
+      var result = instance.cata(
         (e) => true,
         (s) => false
       );
-      expect(result, isTrue, reason: "The right case ran for fold() on a Left");
+      expect(result, isTrue, reason: "The right case ran for cata() on a Left");
     });
 
     test("map() should return the same Left instance", () {
@@ -64,12 +64,12 @@ rightTests() {
       expect(instance.isRight(), isTrue);
     });
 
-    test("fold() should run the right case", () {
-      var result = instance.fold(
+    test("cata() should run the right case", () {
+      var result = instance.cata(
         (e) => false,
         (s) => true
       );
-      expect(result, isTrue, reason: "The left case ran for fold() on a Right");
+      expect(result, isTrue, reason: "The left case ran for cata() on a Right");
     });
 
     test("map() should apply the mapper", () {

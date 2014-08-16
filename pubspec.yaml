@@ -1,10 +1,10 @@
 name: either
-version: 0.1.7
+version: 0.1.8
 homepage: https://github.com/JosephMoniz/dart-either
 description: >
   A more expressive way to return error or success values via the type system
 author: Joseph Moniz <joseph.moniz@gmail.com>
 dependencies:
-  option: '>=0.3.0 <0.4.0'
+  option: '1.0.0'
 dev_dependencies:
   unittest: 0.4.7+1
