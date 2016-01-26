@@ -5,6 +5,7 @@ description: >
   A more expressive way to return error or success values via the type system
 author: Joseph Moniz <joseph.moniz@gmail.com>
 dependencies:
-  option: ">=1.0.0 <2.0.0"
+  option:
+    path: "/Users/blah/dart/backlogio_acdart/gitbacklog_root/gissue_root/shelfish_root/thirdparty_core_root/option"
 dev_dependencies:
   unittest: 0.4.7+1
